@@ -1,0 +1,30 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Add Admin Management UI for Owner Role",
+  "requirements": [
+    {
+      "id": "REQ-21",
+      "summary": "Add 'Manage Admins' section to Admin Dashboard for owner-role users to grant admin privileges by principal ID",
+      "acceptanceCriteria": [
+        "The 'Manage Admins' section is visible in the Admin Dashboard only when the logged-in user has owner role.",
+        "The owner can enter a principal ID and click 'Grant Admin Role' to elevate that principal to admin.",
+        "A success message is displayed when the role is granted successfully.",
+        "An error message is displayed if the operation fails or if the actor is not available.",
+        "The form input is cleared after a successful grant."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useQueries.ts",
+          "operation": "modify",
+          "description": "Add a new mutation hook `useGrantAdminRole` that calls the backend `grantAdminRole` function with a principal parameter. The hook should use useMutation from TanStack Query and accept a Principal as input. Return the mutation object with success/error states for use in the UI."
+        },
+        {
+          "path": "frontend/src/pages/AdminDashboard.tsx",
+          "operation": "modify",
+          "description": "Add a 'Manage Admins' section below the existing admin controls that is conditionally rendered only when the current user's role equals UserRole.admin (which represents owner in the authorization component). Include a form with a text input for principal ID, a 'Grant Admin Role' button, and success/error message displays using state. Wire the form submission to call the useGrantAdminRole mutation hook. Clear the input field after successful grant. Add a helper note explaining that the principal ID must be obtained from the user's Internet Identity login session. Import Principal from '@dfinity/principal' to validate and convert the text input to a Principal object before calling the mutation."
+        }
+      ]
+    }
+  ]
+}

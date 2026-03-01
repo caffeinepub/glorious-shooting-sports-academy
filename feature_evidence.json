@@ -1,0 +1,26 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-in-the-admin-dashboard-frontend-src-pages-admindashboard-tsx-add-a-manage-admins-section-visible-only-to-owner-role-users-this-section-should-display-a-form-with-a-text-input-for-a-principal-id-and-a-grant-admin-role-button-that-calls-the-backend-grantadminrole-function-show-a-success-or-error-message-after-the-operation-include-a-helper-note-in-the-ui-explaining-that-the-principal-id-must-be-obtained-from-the-user-s-internet-identity-login-session",
+      "featureTitle": "In the Admin Dashboard (frontend/src/pages/AdminDashboard.tsx), add a 'Manage Admins' section visible only to owner-role users. This section should display a form with a text input for a principal ID and a 'Grant Admin Role' button that calls the backend `grantAdminRole` function. Show a success or error message after the operation. Include a helper note in the UI explaining that the principal ID must be obtained from the user's Internet Identity login session.",
+      "files": [
+        "frontend/src/hooks/useQueries.ts",
+        "frontend/src/pages/AdminDashboard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-21"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

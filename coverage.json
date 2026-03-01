@@ -1,0 +1,52 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-03-01T07:51:41.258Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 1,
+    "items": [
+      {
+        "id": "REQ-20",
+        "summary": "In the backend (backend/main.mo), register the Internet Identity principal associated with the email sairamdevil2515@gmail.com as a pre-seeded admin user with full admin privileges. Since Internet Identity does not expose email addresses directly, add a backend function `addAdminByPrincipal(principal: Principal)` callable only by the owner role, and pre-seed a known admin entry for this user. Also expose a function `grantAdminRole(principal: Principal)` that allows an owner to elevate any authenticated principal to admin role. Ensure this new admin can perform all admin-privileged operations: add scores, delete scores, and access the admin dashboard.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-21",
+        "summary": "In the Admin Dashboard (frontend/src/pages/AdminDashboard.tsx), add a 'Manage Admins' section visible only to owner-role users. This section should display a form with a text input for a principal ID and a 'Grant Admin Role' button that calls the backend `grantAdminRole` function. Show a success or error message after the operation. Include a helper note in the UI explaining that the principal ID must be obtained from the user's Internet Identity login session.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/pages/AdminDashboard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/hooks/useQueries.ts",
+          "frontend/src/pages/AdminDashboard.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/main.mo",
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/pages/AdminDashboard.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

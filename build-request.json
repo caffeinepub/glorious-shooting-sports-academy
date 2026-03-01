@@ -1,0 +1,61 @@
+{
+  "kind": "build_request",
+  "title": "Add sairamdevil2515@gmail.com as admin with full privileges",
+  "projectName": "Glorious Shooting Academy",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-20",
+      "text": "In the backend (backend/main.mo), register the Internet Identity principal associated with the email sairamdevil2515@gmail.com as a pre-seeded admin user with full admin privileges. Since Internet Identity does not expose email addresses directly, add a backend function `addAdminByPrincipal(principal: Principal)` callable only by the owner role, and pre-seed a known admin entry for this user. Also expose a function `grantAdminRole(principal: Principal)` that allows an owner to elevate any authenticated principal to admin role. Ensure this new admin can perform all admin-privileged operations: add scores, delete scores, and access the admin dashboard.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ],
+        "quotes": [
+          "Add sairamdevil2515@gmail.com as admin and give all admin privileges"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A backend function exists to grant admin role to a given principal, callable only by owner-role users.",
+        "The admin role grants full privileges: add scores, delete scores, view admin dashboard data.",
+        "Existing role-based access control checks in the backend continue to work correctly for other users.",
+        "The new admin principal, once granted, is persisted in stable storage so it survives canister upgrades."
+      ]
+    },
+    {
+      "id": "REQ-21",
+      "text": "In the Admin Dashboard (frontend/src/pages/AdminDashboard.tsx), add a 'Manage Admins' section visible only to owner-role users. This section should display a form with a text input for a principal ID and a 'Grant Admin Role' button that calls the backend `grantAdminRole` function. Show a success or error message after the operation. Include a helper note in the UI explaining that the principal ID must be obtained from the user's Internet Identity login session.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-user-1"
+        ],
+        "quotes": [
+          "Add sairamdevil2515@gmail.com as admin and give all admin privileges"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The 'Manage Admins' section is visible in the Admin Dashboard only when the logged-in user has owner role.",
+        "The owner can enter a principal ID and click 'Grant Admin Role' to elevate that principal to admin.",
+        "A success message is displayed when the role is granted successfully.",
+        "An error message is displayed if the operation fails or if the actor is not available.",
+        "The form input is cleared after a successful grant."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify any files under frontend/src/hooks/useActor.ts, frontend/src/hooks/useInternetIdentity.ts, frontend/src/main.tsx, or frontend/src/components/ui.",
+    "All backend logic must remain in the single actor in backend/main.mo.",
+    "Role-based access control must not be weakened for existing roles."
+  ],
+  "nonGoals": [
+    "Email-based authentication or lookup — Internet Identity does not expose email addresses; principal ID is the correct identifier.",
+    "Adding any new public-facing pages or changing the visual theme.",
+    "Modifying the scores data model or existing score add/delete functionality."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

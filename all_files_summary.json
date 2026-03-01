@@ -1,0 +1,22 @@
+{
+  "backend/main.mo": "Main Motoko actor for the shooting academy backend, managing scores and user profiles with role-based access control (admin/user), including functions to add/delete scores, manage user profiles, and grant admin roles.",
+  "feature_evidence.json": "Feature evidence report documenting the 'Manage Admins' section added to AdminDashboard.tsx, which allows owner-role users to grant admin privileges via principal ID input calling the backend `grantAdminRole` function.",
+  "frontend-file-summaries.txt": "JSON file containing one-line summaries of all frontend source files, serving as a quick reference for the purpose and content of each frontend component, page, hook, and config file.",
+  "frontend/index.css": "Global CSS file with Tailwind directives and OKLCH-based CSS custom properties defining light and dark mode color tokens for the app's design system.",
+  "frontend/index.html": "HTML entry point for the React app, setting the dark class, favicon, viewport meta, description, and page title for Glorious Shooting Sports Academy.",
+  "frontend/src/App.tsx": "Root React component that sets up TanStack Router with routes for Home, Scores, Login, and Admin Dashboard, wrapped in ThemeProvider (dark) and QueryClientProvider with a shared Layout including NavigationBar and Footer.",
+  "frontend/src/components/Footer.tsx": "Site footer component displaying the academy logo/brand, quick navigation links, contact info (phone and location), copyright year, and a caffeine.ai attribution link.",
+  "frontend/src/components/NavigationBar.tsx": "Sticky top navigation bar with the academy logo, desktop nav links (Home, Scores), authenticated user controls (Dashboard + Logout or Admin Login), and a responsive mobile hamburger menu.",
+  "frontend/src/hooks/useActor.ts": "React hook that creates and caches an authenticated or anonymous ICP actor using TanStack Query, reinitializing access control with an admin token when the identity changes and invalidating dependent queries on actor updates.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Provides a React context and hook for Internet Identity authentication, exposing login/logout functions, identity state, and login status. Wraps DFINITY's AuthClient with a provider component that persists identity across page reloads.",
+  "frontend/src/hooks/useQueries.ts": "Defines React Query hooks for all backend interactions including fetching/adding/deleting scores, managing user profiles, querying user roles, and granting admin roles.",
+  "frontend/src/index.css": "Global stylesheet importing Barlow fonts and Tailwind CSS, defining a navy/gold dark theme via CSS custom properties for both light and dark modes.",
+  "frontend/src/main.tsx": "Application entry point that mounts the React app with QueryClientProvider and InternetIdentityProvider wrapping the root App component.",
+  "frontend/src/pages/AdminDashboard.tsx": "Admin dashboard page allowing authenticated users to add/delete scores, manage their profile, view their role, and grant admin roles to other principals.",
+  "frontend/src/pages/HomePage.tsx": "Public landing page for Glorious Shooting Sports Academy featuring a hero section, contact info, and feature highlights with links to scores and phone contact.",
+  "frontend/src/pages/LoginPage.tsx": "Login page that triggers Internet Identity authentication and redirects authenticated users to the admin dashboard, showing loading and error states.",
+  "frontend/src/pages/ScoresPage.tsx": "Public scores page that fetches and displays all shooter scores in a sortable table with columns for shooter name, discipline, distance, score, and date. Includes summary stat cards and a discipline badge component with color-coded styling.",
+  "frontend/src/utils/urlParams.ts": "Utility functions for extracting URL parameters from both regular query strings and hash-based routing, with helpers to persist values in sessionStorage and clean sensitive params from the URL hash.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration defining a dark navy/gold color palette, Barlow font families, CSS variable-based semantic colors, and accordion animations for the shooting academy frontend.",
+  "project_state.json": "Project state manifest (version 19) describing the Glorious Shooting Sports Academy website, its existing features, known issues, architectural notes, and versioned requirement tracking."
+}

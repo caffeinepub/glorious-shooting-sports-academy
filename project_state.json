@@ -1,0 +1,226 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 19,
+  "summary": "Website for Glorious Shooting Sports Academy located in Gurunanak Colony, Vijayawada. The academy provides training in rifle and pistol shooting (10 meters). The site includes an admin/owner login system and a score display feature.",
+  "architectural_notes": [
+    "Role-based login: two roles — Admin and Owner",
+    "Score display should be publicly accessible or role-gated (to be clarified)"
+  ],
+  "known_issues": [
+    "Logo image not displaying correctly after Version 3 build — user reports logo is not updated visually",
+    "'Actor not available' error when attempting to add a score in the Admin Dashboard — backend actor may not be initialized or connected properly on the frontend"
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-create-a-public-facing-homepage-for-glorious-shooting-sports-academy-the-page-must-display-the-academy-name-prominently-its-location-gurunanak-colony-vijayawada-a-description-of-training-programs-offered-rifle-shooting-10-meters-pistol-shooting-10-meters-contact-location-information-and-a-navigation-bar-with-links-to-home-scores-and-login",
+      "title": "Create a public-facing homepage for Glorious Shooting Sports Academy. The page must display the academy name prominently, its location (Gurunanak Colony, Vijayawada), a description of training programs offered (Rifle Shooting – 10 meters, Pistol Shooting – 10 meters), contact/location information, and a navigation bar with links to Home, Scores, and Login.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-login-page-on-the-frontend-with-username-and-password-fields-on-successful-login-redirect-the-user-to-the-admin-dashboard-show-an-error-message-for-invalid-credentials-display-role-admin-or-owner-in-the-dashboard-header-after-login",
+      "title": "Create a Login page on the frontend with username and password fields. On successful login, redirect the user to the Admin Dashboard. Show an error message for invalid credentials. Display role (Admin or Owner) in the dashboard header after login.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-public-scores-page-that-fetches-and-displays-all-shooter-scores-from-the-backend-in-a-tabular-format-columns-shooter-name-discipline-distance-score-date-the-table-should-be-sortable-by-score-or-date-this-page-is-accessible-without-login",
+      "title": "Create a public Scores page that fetches and displays all shooter scores from the backend in a tabular format. Columns: Shooter Name, Discipline, Distance, Score, Date. The table should be sortable by score or date. This page is accessible without login.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-an-admin-dashboard-protected-route-accessible-only-after-login-that-allows-admin-and-owner-users-to-add-new-score-entries-via-a-form-fields-shooter-name-discipline-dropdown-score-date-and-delete-existing-scores-from-a-management-table",
+      "title": "Create an Admin Dashboard (protected route, accessible only after login) that allows admin and owner users to add new score entries via a form (fields: shooter name, discipline dropdown, score, date) and delete existing scores from a management table.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-bold-professional-visual-theme-inspired-by-precision-sports-dark-navy-charcoal-background-gold-amber-accent-colors-sharp-typography-and-target-crosshair-motifs-where-appropriate-use-this-theme-consistently-across-all-pages-including-the-homepage-scores-page-login-page-and-admin-dashboard",
+      "title": "Apply a bold, professional visual theme inspired by precision sports — dark navy/charcoal background, gold/amber accent colors, sharp typography, and target/crosshair motifs where appropriate. Use this theme consistently across all pages including the homepage, scores page, login page, and admin dashboard.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-logo-in-the-navigationbar-with-the-new-academy-logo-image-generated-from-the-uploaded-photo-the-logo-should-display-the-circular-target-shooting-motif-visible-in-the-background-of-the-uploaded-image-styled-to-match-the-existing-dark-navy-gold-theme-place-the-logo-image-at-frontend-public-assets-generated-academy-logo-dim-120x120-png-and-reference-it-in-navigationbar-tsx",
+      "title": "Replace the current logo in the NavigationBar with the new academy logo image generated from the uploaded photo. The logo should display the circular target/shooting motif visible in the background of the uploaded image, styled to match the existing dark navy/gold theme. Place the logo image at frontend/public/assets/generated/academy-logo.dim_120x120.png and reference it in NavigationBar.tsx.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-uploaded-photo-of-the-academy-instructor-owner-man-in-red-shirt-seated-at-desk-with-the-glorious-shooting-academy-banner-visible-behind-him-to-the-homepage-homepage-tsx-display-it-as-a-prominent-section-image-either-in-the-hero-section-or-in-a-dedicated-about-meet-the-coach-section-reference-the-image-from-frontend-public-assets-generated-academy-owner-dim-800x900-png",
+      "title": "Add the uploaded photo of the academy instructor/owner (man in red shirt seated at desk with the Glorious Shooting academy banner visible behind him) to the homepage (HomePage.tsx). Display it as a prominent section image — either in the hero section or in a dedicated 'About / Meet the Coach' section. Reference the image from frontend/public/assets/generated/academy-owner.dim_800x900.png.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-logo-image-in-navigationbar-tsx-with-the-newly-uploaded-academy-logo-circular-target-shooting-motif-with-glorious-shooting-sport-academy-vijayawada-text-reference-the-new-image-from-frontend-public-assets-generated-academy-logo-new-dim-120x120-png",
+      "title": "Replace the current logo image in NavigationBar.tsx with the newly uploaded academy logo (circular target/shooting motif with 'Glorious Shooting Sport Academy – Vijayawada' text). Reference the new image from frontend/public/assets/generated/academy-logo-new.dim_120x120.png.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-mobile-contact-number-8121951021-to-the-contact-information-section-on-the-homepage-and-in-the-footer-display-it-alongside-or-beneath-the-existing-location-contact-details",
+      "title": "Add the mobile contact number 8121951021 to the contact information section on the HomePage and in the Footer. Display it alongside or beneath the existing location/contact details.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-prominent-top-heading-or-banner-on-the-homepage-that-reads-only-for-academy-students-this-should-appear-near-the-top-of-the-page-visually-distinct-e-g-a-gold-amber-banner-or-styled-notice-making-it-clear-the-platform-is-restricted-to-enrolled-academy-students",
+      "title": "Add a prominent top heading or banner on the HomePage that reads 'Only for Academy Students'. This should appear near the top of the page, visually distinct (e.g., a gold/amber banner or styled notice), making it clear the platform is restricted to enrolled academy students.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-replace-the-current-logo-image-in-navigationbar-tsx-with-the-newly-uploaded-academy-logo-circular-shooting-target-motif-with-crossed-rifles-and-glorious-shooting-sport-academy-vijayawada-text-reference-the-new-image-from-frontend-public-assets-generated-academy-logo-latest-dim-120x120-png",
+      "title": "Replace the current logo image in NavigationBar.tsx with the newly uploaded academy logo (circular shooting target motif with crossed rifles and 'GLORIOUS SHOOTING SPORT ACADEMY – VIJAYAWADA' text). Reference the new image from frontend/public/assets/generated/academy-logo-latest.dim_120x120.png.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-application-is-fully-production-ready-and-deployed-verify-all-existing-features-are-functional-including-the-homepage-scores-page-login-page-admin-dashboard-navigation-bar-with-the-latest-academy-logo-academy-logo-latest-dim-120x120-png-contact-number-8121951021-only-for-academy-students-banner-and-the-navy-gold-visual-theme-no-new-features-are-required-this-is-a-go-live-confirmation-build",
+      "title": "Ensure the application is fully production-ready and deployed: verify all existing features are functional including the homepage, scores page, login page, admin dashboard, navigation bar with the latest academy logo (academy-logo-latest.dim_120x120.png), contact number (8121951021), 'Only for Academy Students' banner, and the navy/gold visual theme. No new features are required — this is a go-live confirmation build.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-daily-score-update-section-or-panel-on-the-public-scores-page-scorespage-tsx-that-displays-only-the-scores-entered-on-today-s-date-this-section-should-appear-prominently-e-g-above-or-alongside-the-full-scores-table-with-a-heading-such-as-today-s-scores-and-show-the-same-columns-shooter-name-discipline-distance-score-date",
+      "title": "Add a 'Daily Score Update' section or panel on the public Scores page (ScoresPage.tsx) that displays only the scores entered on today's date. This section should appear prominently (e.g., above or alongside the full scores table) with a heading such as 'Today's Scores' and show the same columns: Shooter Name, Discipline, Distance, Score, Date.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-application-is-fully-production-ready-and-deployed-with-all-existing-features-verified-and-functional-homepage-with-only-for-academy-students-banner-academy-owner-photo-contact-number-8121951021-public-scores-page-with-today-s-scores-daily-update-section-and-sortable-full-scores-table-login-page-internet-identity-authentication-admin-dashboard-add-delete-scores-with-today-s-date-pre-populated-navigation-bar-with-the-latest-academy-logo-academy-logo-latest-dim-120x120-png-footer-with-contact-details-and-the-consistent-dark-navy-gold-visual-theme-across-all-pages",
+      "title": "Ensure the application is fully production-ready and deployed with all existing features verified and functional: homepage (with 'Only for Academy Students' banner, academy owner photo, contact number 8121951021), public scores page (with Today's Scores daily update section and sortable full scores table), login page (Internet Identity authentication), admin dashboard (add/delete scores with today's date pre-populated), navigation bar with the latest academy logo (academy-logo-latest.dim_120x120.png), footer with contact details, and the consistent dark navy/gold visual theme across all pages.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-fix-the-actor-not-available-error-in-the-admin-dashboard-that-prevents-users-from-adding-scores-the-useactor-hook-in-frontend-src-hooks-useactor-ts-is-read-only-so-the-fix-must-be-implemented-in-frontend-src-hooks-usequeries-ts-and-or-frontend-src-pages-admindashboard-tsx-ensure-the-actor-is-properly-initialized-and-available-before-any-score-mutation-is-attempted-add-a-loading-pending-guard-so-the-add-score-form-submission-is-disabled-or-deferred-until-the-actor-is-ready-handle-the-case-where-the-actor-may-not-yet-be-initialized-e-g-internet-identity-not-yet-connected-or-canister-id-not-resolved-by-showing-a-clear-loading-state-rather-than-throwing-an-error",
+      "title": "Fix the 'Actor not available' error in the Admin Dashboard that prevents users from adding scores. The `useActor` hook in `frontend/src/hooks/useActor.ts` is read-only, so the fix must be implemented in `frontend/src/hooks/useQueries.ts` and/or `frontend/src/pages/AdminDashboard.tsx`. Ensure the actor is properly initialized and available before any score mutation is attempted — add a loading/pending guard so the Add Score form submission is disabled or deferred until the actor is ready. Handle the case where the actor may not yet be initialized (e.g., Internet Identity not yet connected or canister ID not resolved) by showing a clear loading state rather than throwing an error.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-frontend-src-hooks-usequeries-ts-ensure-that-all-score-mutation-hooks-add-score-delete-score-check-for-actor-availability-before-invoking-backend-calls-if-the-actor-is-undefined-or-null-the-mutation-should-not-proceed-and-should-surface-a-clear-error-state-to-the-calling-component-instead-of-propagating-a-raw-actor-not-available-exception",
+      "title": "In `frontend/src/hooks/useQueries.ts`, ensure that all score mutation hooks (add score, delete score) check for actor availability before invoking backend calls. If the actor is undefined or null, the mutation should not proceed and should surface a clear error state to the calling component instead of propagating a raw 'actor not available' exception.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-the-admin-dashboard-frontend-src-pages-admindashboard-tsx-add-a-manage-admins-section-visible-only-to-owner-role-users-this-section-should-display-a-form-with-a-text-input-for-a-principal-id-and-a-grant-admin-role-button-that-calls-the-backend-grantadminrole-function-show-a-success-or-error-message-after-the-operation-include-a-helper-note-in-the-ui-explaining-that-the-principal-id-must-be-obtained-from-the-user-s-internet-identity-login-session",
+      "title": "In the Admin Dashboard (frontend/src/pages/AdminDashboard.tsx), add a 'Manage Admins' section visible only to owner-role users. This section should display a form with a text input for a principal ID and a 'Grant Admin Role' button that calls the backend `grantAdminRole` function. Show a success or error message after the operation. Include a helper note in the UI explaining that the principal ID must be obtained from the user's Internet Identity login session.",
+      "reqIds": [
+        "REQ-21"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Academy homepage with info about Glorious Shooting Sports Academy (location: Gurunanak Colony, Vijayawada, training in rifle & pistol shooting 10m)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Login system for academy admin and owner roles",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Score display page to show shooter scores on the website",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Implement a backend authentication system supporting two roles: 'admin' and 'owner'. Store credentials securely in the Motoko actor. Provide login and logout functions. Authenticated sessions should be tracked per Internet Identity principal. Seed at least one default admin account and one default owner account for initial access.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Implement a backend data model for shooter scores. Each score record must include: shooter name, discipline (Rifle or Pistol), distance (10m), score value, and date. Expose functions to add a score (admin/owner only), get all scores (public), and delete a score (admin/owner only).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Update navigation bar logo with a new image, add mobile contact number 8121951021, and add top heading 'Only for Academy Students'",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add today's date as default in shooter score entry form, and add a daily score update feature to the scores list",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "In the Admin Dashboard score entry form, pre-populate the date field with today's date as the default value whenever the form is loaded or reset. The date field should remain editable so admins can override it if needed.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-11",
+      "summary": "Add sairamdevil2515@gmail.com as an admin user with full admin privileges",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-12",
+      "summary": "In the backend (backend/main.mo), register the Internet Identity principal associated with the email sairamdevil2515@gmail.com as a pre-seeded admin user with full admin privileges. Since Internet Identity does not expose email addresses directly, add a backend function `addAdminByPrincipal(principal: Principal)` callable only by the owner role, and pre-seed a known admin entry for this user. Also expose a function `grantAdminRole(principal: Principal)` that allows an owner to elevate any authenticated principal to admin role. Ensure this new admin can perform all admin-privileged operations: add scores, delete scores, and access the admin dashboard.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Glorious Shooting Sports Academy",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
